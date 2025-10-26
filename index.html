@@ -1,59 +1,250 @@
-<!doctype html>
-<html lang="pt-br">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fiado Pro — Controle de Vendas a Prazo Simples e Seguro</title>
+  <meta name="description" content="Aplicativo para controle de fiado, cadastro de clientes, lançamentos, relatórios e recibos. Rápido, seguro e pensado para pequenos negócios." />
 
-    <title>Redirecionando…</title>
-    <meta name="description" content="Redirecionando para o sistema hospedado no PythonAnywhere." />
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Fiado Pro — Controle de Vendas a Prazo" />
+  <meta property="og:description" content="Cadastre clientes, lance vendas e gere recibos em poucos cliques. Comece grátis." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="./assets/capa.png" />
+  <meta property="og:url" content="https://seu-usuario.github.io/seu-repo/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- TROQUE A URL ABAIXO PELA SUA -->
-    <link id="paLink" rel="canonical" href="https://fiadopro.pythonanywhere.com/" />
-    <meta http-equiv="refresh" content="2; url=https://fiadopro.pythonanywhere.com/" />
+  <link rel="icon" href="./assets/favicon.png" />
+  <style>
+    :root {
+      --bg: #0b1020;
+      --muted: #111831;
+      --card: #0e1530;
+      --text: #e9eefc;
+      --soft: #b8c4ff;
+      --brand: #7aa2ff;
+      --brand-strong: #4c7dff;
+      --ok: #40d69f;
+      --warn: #ffb86b;
+      --danger: #ff6b8a;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; background: radial-gradient(1200px 700px at 70% -10%, #1a2250 0%, var(--bg) 50%); color: var(--text); }
+    a { color: var(--brand); text-decoration: none; }
+    a:hover { color: var(--brand-strong); }
+    .container { width: min(1100px, calc(100% - 2rem)); margin: 0 auto; }
 
-    <!-- Open Graph / Social -->
-    <meta property="og:title" content="FiadoPro" />
-    <meta property="og:description" content="Abrindo o sistema…" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://fiadopro.pythonanywhere.com/" />
+    /* NAV */
+    .nav { position: sticky; top: 0; z-index: 50; backdrop-filter: saturate(140%) blur(8px); background: rgba(8,12,28,.6); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: .9rem 0; }
+    .brand { display: flex; align-items: center; gap: .65rem; font-weight: 700; letter-spacing: .2px; }
+    .brand-logo { width: 34px; height: 34px; border-radius: 10px; background: linear-gradient(160deg, var(--brand), #93b1ff); box-shadow: var(--shadow); display: grid; place-items: center; font-weight: 900; color: #08122a; }
+    .nav-cta { display: flex; gap: .7rem; align-items: center; }
 
-    <!-- Estilo básico -->
-    <style>
-      :root { --bg:#0b1320; --card:#121a2b; --txt:#e9edf5; --accent:#5cc8ff; }
-      * { box-sizing:border-box }
-      html,body { height:100% }
-      body { margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; color:var(--txt); background: radial-gradient(1200px 600px at 50% -20%, #1a2b4a, var(--bg)); display:grid; place-items:center; }
-      .card { width:min(640px,92%); background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.07); border-radius:20px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.25); backdrop-filter: blur(6px); }
-      h1 { margin:0 0 8px; font-size:clamp(20px, 3.6vw, 28px); letter-spacing:.2px }
-      p { margin:0 0 14px; opacity:.9 }
-      .url { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0f1a30; border:1px solid rgba(255,255,255,.08); padding:8px 10px; border-radius:10px; display:inline-block }
-      .btn { display:inline-block; margin-top:12px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); text-decoration:none; color:var(--txt); font-weight:600 }
-      .btn:hover { border-color: var(--accent); box-shadow:0 0 0 3px rgba(92, 200, 255, .25) inset }
-      .hint { margin-top:14px; font-size:14px; opacity:.7 }
-      .spinner { width:18px; height:18px; border:3px solid rgba(255,255,255,.25); border-top-color: var(--accent); border-radius:50%; display:inline-block; animation:spin 1s linear infinite; vertical-align:-3px; margin-right:8px }
-      @keyframes spin { to { transform: rotate(360deg) } }
-    </style>
-  </head>
-  <body>
-    <main class="card" role="main" aria-live="polite">
-      <h1><span class="spinner" aria-hidden="true"></span> Redirecionando para o sistema…</h1>
-      <p>Se nada acontecer em alguns segundos, clique no botão abaixo.</p>
-      <p class="url" id="targetText">https://fiadopro.pythonanywhere.com/</p><br/>
-      <a class="btn" id="cta" href="https://fiadopro.pythonanywhere.com/">Abrir agora</a>
-      <p class="hint">Dica: salve este link nos favoritos.</p>
-    </main>
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; padding: .8rem 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.03); color: var(--text); font-weight: 600; transition: transform .08s ease, background .2s ease, border-color .2s ease; }
+    .btn:hover { background: rgba(255,255,255,.06); transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(180deg, var(--brand), var(--brand-strong)); border: none; color: white; box-shadow: 0 8px 20px rgba(76,125,255,.35); }
+    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; border-color: rgba(255,255,255,.14); }
 
-    <script>
-      // Se quiser trocar a URL, basta mudar a constante abaixo:
-      const TARGET = "https://fiadopro.pythonanywhere.com/"; // <- TROCAR AQUI
-      // Sincroniza todos os pontos com o destino
-      document.getElementById("paLink").href = TARGET;
-      document.getElementById("cta").href = TARGET;
-      document.getElementById("targetText").textContent = TARGET;
+    /* HERO */
+    .hero { padding: clamp(2rem, 8vw, 6rem) 0 2rem; }
+    .hero-wrap { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(1.2rem, 3vw, 2rem); align-items: center; }
+    .hero h1 { font-size: clamp(2.1rem, 4.2vw, 3.6rem); line-height: 1.08; margin: 0 0 .8rem; letter-spacing: .2px; }
+    .hero p { font-size: clamp(1.05rem, 1.2vw, 1.2rem); color: var(--soft); margin: 0 0 1.3rem; }
+    .hero-cta { display: flex; gap: .8rem; flex-wrap: wrap; }
+    .hero-card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 1rem; box-shadow: var(--shadow); }
+    .hero-badge { display: inline-flex; align-items: center; gap: .5rem; font-size: .85rem; padding: .4rem .6rem; border-radius: 999px; background: rgba(64,214,159,.12); color: var(--ok); border: 1px solid rgba(64,214,159,.25); }
 
-      // Redireciona também por JS caso meta-refresh seja bloqueado
-      setTimeout(() => { if (location.href !== TARGET) { location.replace(TARGET); } }, 2000);
-    </script>
-  </body>
+    /* FEATURES */
+    .section { padding: clamp(2rem, 7vw, 4.5rem) 0; }
+    .section h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 .4rem; }
+    .section p.lead { color: var(--soft); margin: 0 0 1.2rem; }
+    .grid { display: grid; gap: 1rem; }
+    .features { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 1.1rem; box-shadow: var(--shadow); }
+    .card h3 { margin: .2rem 0 .35rem; font-size: 1.05rem; }
+    .card p { margin: 0; color: var(--soft); font-size: .98rem; }
+    .tag { display: inline-block; font-size: .7rem; opacity: .8; padding: .2rem .5rem; border-radius: 999px; border: 1px solid rgba(255,255,255,.1); }
+
+    .steps { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); counter-reset: step; }
+    .step { position: relative; padding-left: 3.2rem; }
+    .step::before { counter-increment: step; content: counter(step); position: absolute; left: 0; top: .15rem; width: 2.2rem; height: 2.2rem; border-radius: 12px; display: grid; place-items: center; font-weight: 800; background: linear-gradient(180deg, var(--brand), var(--brand-strong)); box-shadow: 0 8px 20px rgba(76,125,255,.25); }
+
+    .cta { text-align: center; }
+
+    /* FAQ */
+    details { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 14px; padding: .8rem 1rem; }
+    details + details { margin-top: .7rem; }
+    summary { cursor: pointer; font-weight: 600; }
+    summary::-webkit-details-marker { display: none; }
+
+    /* FOOTER */
+    footer { border-top: 1px solid rgba(255,255,255,.08); padding: 1.6rem 0; color: #cbd5ff; font-size: .95rem; }
+
+    /* Responsive */
+    @media (max-width: 880px){
+      .hero-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <div class="brand-logo">FP</div>
+        <span>Fiado Pro</span>
+      </div>
+      <nav class="nav-cta">
+        <!-- 👉 Ajuste os links abaixo para o seu domínio do app -->
+        <a class="btn btn-ghost" href="/accounts/login/" id="link-login">Entrar</a>
+        <a class="btn btn-primary" href="/accounts/signup/" id="link-cadastro">Cadastre-se</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-wrap">
+        <div>
+          <span class="hero-badge">Novo • Simples • Seguro</span>
+          <h1>Controle de vendas <span style="color:var(--brand)">fiado</span> sem dor de cabeça</h1>
+          <p>Cadastre clientes, registre compras, gere recibos e acompanhe recebimentos. Tudo em um só lugar, do seu celular ou computador.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="/accounts/signup/">Começar agora</a>
+            <a class="btn" href="#recursos">Ver recursos</a>
+          </div>
+          <div class="hero-card" style="margin-top:1rem">
+            <strong>Sem mensalidade para começar.</strong>
+            <div style="height:.4rem"></div>
+            <small style="color:var(--soft)">Plano gratuito com limites justos. Atualize quando precisar.</small>
+          </div>
+        </div>
+        <div>
+          <div class="hero-card">
+            <img src="./assets/preview-dashboard.png" alt="Prévia do painel do Fiado Pro" style="width:100%; border-radius:14px; display:block;"/>
+            <div style="display:flex; gap:.7rem; margin-top:.7rem; flex-wrap:wrap">
+              <span class="tag">Recibos PDF</span>
+              <span class="tag">Relatórios</span>
+              <span class="tag">Controle de parcelas</span>
+              <span class="tag">Exportação</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="recursos">
+      <div class="container">
+        <h2>Recursos que fazem diferença</h2>
+        <p class="lead">Tudo que você precisa para organizar o fiado do seu negócio com tranquilidade.</p>
+        <div class="grid features">
+          <div class="card">
+            <h3>Cadastro de clientes</h3>
+            <p>Guarde contatos, limites e histórico. Pesquise em segundos.</p>
+          </div>
+          <div class="card">
+            <h3>Lançamentos rápidos</h3>
+            <p>Registre vendas e pagamentos em poucos cliques, inclusive pelo celular.</p>
+          </div>
+          <div class="card">
+            <h3>Recibos e comprovantes</h3>
+            <p>Gere recibos bonitos em PDF e envie no WhatsApp.</p>
+          </div>
+          <div class="card">
+            <h3>Relatórios claros</h3>
+            <p>Acompanhe o que entrou, o que falta receber e inadimplência.</p>
+          </div>
+          <div class="card">
+            <h3>Permissões por usuário</h3>
+            <p>Convide equipe e controle o que cada um pode ver e fazer.</p>
+          </div>
+          <div class="card">
+            <h3>Backup e segurança</h3>
+            <p>Criptografia em trânsito, exportação de dados e logs de atividade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container grid steps">
+        <div class="card step">
+          <h3>Crie sua conta</h3>
+          <p>Leva menos de 1 minuto para começar.</p>
+        </div>
+        <div class="card step">
+          <h3>Cadastre seus clientes</h3>
+          <p>Importe planilha ou adicione manualmente.</p>
+        </div>
+        <div class="card step">
+          <h3>Comece a lançar</h3>
+          <p>Registre vendas, gere recibos e acompanhe relatórios.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <h2>Pronto para organizar o fiado do seu negócio?</h2>
+          <p class="lead">Crie sua conta gratuitamente e teste agora mesmo.</p>
+          <div class="hero-cta" style="justify-content:center">
+            <a class="btn btn-primary" href="/accounts/signup/">Cadastre-se grátis</a>
+            <a class="btn" href="/accounts/login/">Já tenho conta</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Perguntas frequentes</h2>
+        <details>
+          <summary>O Fiado Pro é gratuito?</summary>
+          <p>Você pode começar no plano gratuito com limites generosos. Quando precisar, faça o upgrade.</p>
+        </details>
+        <details>
+          <summary>Posso exportar meus dados?</summary>
+          <p>Sim. Oferecemos exportação em CSV/PDF para que seus dados sejam sempre seus.</p>
+        </details>
+        <details>
+          <summary>Funciona no celular?</summary>
+          <p>Sim. O sistema é responsivo e funciona em navegadores modernos.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container" style="display:flex; justify-content:space-between; gap:.8rem; flex-wrap:wrap; align-items:center;">
+      <div>© <span id="y"></span> Fiado Pro. Todos os direitos reservados.</div>
+      <div style="opacity:.9">
+        <a href="#" onclick="alert('Em breve!'); return false;">Termos</a> •
+        <a href="#" onclick="alert('Em breve!'); return false;">Privacidade</a> •
+        <a href="mailto:suporte@seudominio.com">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Ajusta ano e permite configurar URLs sem editar o HTML
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // 👉 Troque estes URLs para os do seu app em produção, se NÃO estiver no mesmo domínio
+    const APP_BASE = '';
+    const urls = {
+      login: APP_BASE + '/accounts/login/',
+      signup: APP_BASE + '/accounts/signup/'
+    };
+    const aLogin = document.getElementById('link-login');
+    const aCad = document.getElementById('link-cadastro');
+    if (APP_BASE) {
+      aLogin.href = urls.login;
+      aCad.href = urls.signup;
+    }
+  </script>
+</body>
 </html>
