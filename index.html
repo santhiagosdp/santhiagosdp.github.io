@@ -11,8 +11,10 @@
   <meta property="og:description" content="Cadastre clientes, lance vendas e gere recibos em poucos cliques. Comece grátis." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./assets/capa.png" />
-  <meta property="og:url" content="https://santhiagosdp.github.io/seu-repo/" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:url" content="https://santhiagosdp.github.io/fiadopro/" />
+  <link rel="canonical" href="https://santhiagosdp.github.io/fiadopro/" />
+
 
   <link rel="icon" href="./assets/favicon.png" />
   <style>
@@ -233,8 +235,8 @@
     // Ajusta ano e permite configurar URLs sem editar o HTML
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // 👉 Troque estes URLs para os do seu app em produção, se NÃO estiver no mesmo domínio
-    const APP_BASE = '';
+    
+    const APP_BASE = 'https://fiadopro.pythonanywhere.com';
     const urls = {
       login: APP_BASE + '/accounts/login/',
       signup: APP_BASE + '/accounts/signup/'
