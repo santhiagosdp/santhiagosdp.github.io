@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Redirecionando…</title>
+    <meta name="description" content="Redirecionando para o sistema hospedado no PythonAnywhere." />
+
+    <!-- TROQUE A URL ABAIXO PELA SUA -->
+    <link id="paLink" rel="canonical" href="https://fiadopro.pythonanywhere.com/" />
+    <meta http-equiv="refresh" content="2; url=https://fiadopro.pythonanywhere.com/" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="FiadoPro" />
+    <meta property="og:description" content="Abrindo o sistema…" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://fiadopro.pythonanywhere.com/" />
+
+    <!-- Estilo básico -->
+    <style>
+      :root { --bg:#0b1320; --card:#121a2b; --txt:#e9edf5; --accent:#5cc8ff; }
+      * { box-sizing:border-box }
+      html,body { height:100% }
+      body { margin:0; font:16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; color:var(--txt); background: radial-gradient(1200px 600px at 50% -20%, #1a2b4a, var(--bg)); display:grid; place-items:center; }
+      .card { width:min(640px,92%); background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,0.07); border-radius:20px; padding:28px; box-shadow:0 10px 30px rgba(0,0,0,.25); backdrop-filter: blur(6px); }
+      h1 { margin:0 0 8px; font-size:clamp(20px, 3.6vw, 28px); letter-spacing:.2px }
+      p { margin:0 0 14px; opacity:.9 }
+      .url { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0f1a30; border:1px solid rgba(255,255,255,.08); padding:8px 10px; border-radius:10px; display:inline-block }
+      .btn { display:inline-block; margin-top:12px; padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.14); text-decoration:none; color:var(--txt); font-weight:600 }
+      .btn:hover { border-color: var(--accent); box-shadow:0 0 0 3px rgba(92, 200, 255, .25) inset }
+      .hint { margin-top:14px; font-size:14px; opacity:.7 }
+      .spinner { width:18px; height:18px; border:3px solid rgba(255,255,255,.25); border-top-color: var(--accent); border-radius:50%; display:inline-block; animation:spin 1s linear infinite; vertical-align:-3px; margin-right:8px }
+      @keyframes spin { to { transform: rotate(360deg) } }
+    </style>
+  </head>
+  <body>
+    <main class="card" role="main" aria-live="polite">
+      <h1><span class="spinner" aria-hidden="true"></span> Redirecionando para o sistema…</h1>
+      <p>Se nada acontecer em alguns segundos, clique no botão abaixo.</p>
+      <p class="url" id="targetText">https://fiadopro.pythonanywhere.com/</p><br/>
+      <a class="btn" id="cta" href="https://fiadopro.pythonanywhere.com/">Abrir agora</a>
+      <p class="hint">Dica: salve este link nos favoritos.</p>
+    </main>
+
+    <script>
+      // Se quiser trocar a URL, basta mudar a constante abaixo:
+      const TARGET = "https://fiadopro.pythonanywhere.com/"; // <- TROCAR AQUI
+      // Sincroniza todos os pontos com o destino
+      document.getElementById("paLink").href = TARGET;
+      document.getElementById("cta").href = TARGET;
+      document.getElementById("targetText").textContent = TARGET;
+
+      // Redireciona também por JS caso meta-refresh seja bloqueado
+      setTimeout(() => { if (location.href !== TARGET) { location.replace(TARGET); } }, 2000);
+    </script>
+  </body>
+</html>
